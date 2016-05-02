@@ -1,4 +1,4 @@
-package in.shape;
+package com.example.shape;
 
 import android.support.v4.app.Fragment;
 

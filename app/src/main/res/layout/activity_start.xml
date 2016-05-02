@@ -3,5 +3,5 @@
     android:id="@+id/pager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="in.shape.startActivity" />
+    tools:context="com.example.shape.startActivity" />
 

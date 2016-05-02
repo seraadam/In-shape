@@ -1,4 +1,4 @@
-package in.shape;
+package com.example.shape;
 
 
 
@@ -8,15 +8,21 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 
 public class bmifragment extends Fragment {
 	
-	EditText age ;
+	//EditText age ;
     EditText weight ;
     EditText height ;
-    EditText gender ;
+	EditText results ;
+   // RadioGroup gender ;
+	Button result;
+	double valueheight =0;
+	double valueweight =0 ;
+	double bmi =0 ;
     int w , h , a ;
     
 	@Override
@@ -24,11 +30,33 @@ public class bmifragment extends Fragment {
 			Bundle savedInstanceState) {
 		
 		 final View v = inflater.inflate(R.layout.fragment_bmi, container, false);
-	     age = (EditText) v.findViewById(R.id.age);
+	   //  age = (EditText) v.findViewById(R.id.age);
 	    weight = (EditText) v.findViewById(R.id.weight);
 	    height = (EditText) v.findViewById(R.id.height);
-	    gender = (EditText) v.findViewById(R.id.gender);
-	     
+	   // gender = (RadioGroup) v.findViewById(R.id.gender);
+		results = (EditText) v.findViewById(R.id.results);
+		result = (Button) v.findViewById(R.id.result);
+
+
+		result.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+
+				calculate();
+				valueheight = Double.parseDouble(height.getText().toString());
+				valueheight = valueheight/100;
+
+				valueweight = Double.parseDouble(weight.getText().toString());
+
+				bmi = (valueweight/ (valueheight * valueheight));
+
+				results.setText(Double.toString(bmi));
+
+
+			}
+		});
+
+
 	  // String temp1 = "";
 	  // String temp2 = "";
 	  // String temp3 = "";
@@ -46,7 +74,11 @@ public class bmifragment extends Fragment {
 		 return v;
 		 
 	}
-	
+
+	private void calculate(){
+
+
+	}
 	@Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);

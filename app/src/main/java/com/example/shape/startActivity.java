@@ -1,21 +1,20 @@
-package in.shape;
+package com.example.shape;
 
-import java.util.Locale;
-
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.Locale;
 
 public class startActivity extends ActionBarActivity implements
 		ActionBar.TabListener {
@@ -142,8 +141,8 @@ public class startActivity extends ActionBarActivity implements
 
 		@Override
 		public int getCount() {
-			// Show 2 total pages.
-			return 2;
+			// Show 3 total pages.
+			return 3;
 		}
 
 		@Override
@@ -154,6 +153,8 @@ public class startActivity extends ActionBarActivity implements
 				return getString(R.string.title_section1).toUpperCase(l);
 			case 1:
 				return getString(R.string.title_section2).toUpperCase(l);
+  			case 2:
+				return getString(R.string.title_section3).toUpperCase(l);
 			
 			}
 			return null;
